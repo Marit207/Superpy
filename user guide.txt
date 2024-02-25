@@ -1,0 +1,100 @@
+User guide superpy
+
+Welcome to superpy. This program is designed to help a supermarket keep track of their inventory.
+This program is an command-line interface. This means that you interact with the computer by text.
+All the data is stored in a csv file. Via the command-line interface you can look up information from the csv file.
+There are several options you can choose from what you want to look up.
+You have to type in a specific command for what you want to see.
+These are the options with it's command:
+
+-Show product information and expiration date: product_information
+-Show the amount of products: amount_products
+-Show all the products: show_products
+-Show all the products bought and sold on a specific date: bought_sold_on_date 
+-Add a product: add_product
+-Remove a product: remove_product
+-Show the revenue and profit of today, or over a period of time: revenue_and_profit
+
+Together with the option you have to specify for example a product or a date.
+With every option comes a help function, it shows what you have to type in together with the command.
+Not every command needs a product or date specification.
+Here are some examples of every option plus how to use the help function.
+
+To show the date of today.
+Examples:
+py .\main.py today --help
+py .\main.py today
+
+To advance a certain day in the future.
+Examples:
+py .\main.py advance_time --help
+py .\main.py advance_time 3
+
+To show the information of a certain product and if the expiration date is expired.
+Examples:
+py .\main.py product_information --help
+py .\main.py product_information orange
+py .\main.py product_information vegan_hamburger
+
+To show the amount of every product.
+Examples:
+py .\main.py amount_products --help
+py .\main.py amount_products
+
+To show all of the products.
+Examples:
+py .\main.py all_products --help
+py .\main.py all_products  
+
+To show all of the products bought and sold on a specific date.
+Examples:
+py .\main.py bought_sold_on_date --help
+py .\main.py bought_sold_on_date 2024-01-15
+py .\main.py bought_sold_on_date 2024-06-20
+
+To add a product.
+This is the information that you have to type in.
+id, product_name, buy_date, buy_price, amount_bought, expiration_date
+Examples:
+py .\main.py add_product --help
+py .\main.py add_product 2425 pear 2024-01-18 2.0 40 2024-02-18
+py .\main.py add_product 2450 pasta 2024-03-25 0.5 50 2025-03-25
+
+To remove a product.
+Examples:
+py .\main.py remove_product --help
+py .\main.py remove_product rice 
+py .\main.py remove_product sausage 
+
+To add sell information.
+This is the information that you have to type in.
+product_name, sell_date, sell_price, amount_sold
+Examples:
+py .\main.py sell_data --help
+py .\main.py sell_data peanuts 2024-01-19 2.0 30
+py .\main.py sell_data tomato_soup 2024-05-06 3.0 45
+
+Show revenue and profit.
+There are three options:
+-Revenue and profit of today.
+-Revenue and profit of a certain date.
+-Revenue and profit between two dates.
+
+Show revenue and profit of today.
+Examples:
+py .\main.py revenue_and_profit --help
+py .\main.py revenue_and_profit --today
+
+Show Revenue and profit of a certain day.
+Examples:
+py .\main.py revenue_and_profit --date1 2024-01-15
+py .\main.py revenue_and_profit --date1 2024-05-13
+
+Show revenue and profit for a period of time.
+You have to type in the date and the amount of days to advance.
+Examples:
+py .\main.py revenue_and_profit --date1 2024-03-24 --advance_day 2
+py .\main.py revenue_and_profit --date1 2024-05-16 --advance_day 5
+
+I hope you have enough information to use Superpy. Good luck!
+
